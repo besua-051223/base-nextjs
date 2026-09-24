@@ -1,0 +1,8 @@
+services:
+  bdsv-production:
+    build:
+      context: ../../
+      dockerfile: docker/production/Dockerfile
+    image: bdsv-production
+    ports:
+      - '80:3000'

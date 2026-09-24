@@ -1,0 +1,41 @@
+# Build output
+.next/
+out/
+dist/
+
+# Node
+node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# Public assets
+public/
+
+# Next.js cache
+.next/
+.cache/
+
+# Generated files
+coverage/
+storybook-static/
+
+# Ignore compiled TS output (nếu có)
+*.d.ts
+
+# Ignore lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
