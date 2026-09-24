@@ -7,9 +7,54 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-be-vietnam-pro);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-be-vietnam-pro);
+  --font-inter: var(--font-inter-family);
+  --font-roboto: var(--font-roboto-family);
+
+  --text-hero: 4.875rem;
+  --text-display: 3.5rem;
+  --text-headline: 2.75rem;
+  --text-title: 2rem;
+
+  --color-page: var(--page);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-link: var(--brand-link);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-violet: var(--brand-violet);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-title-from: var(--title-from);
+  --color-title-to: var(--title-to);
+  --color-deep-from: var(--deep-from);
+  --color-deep-to: var(--deep-to);
+  --color-azure-deep: var(--azure-deep);
+  --color-pagination: var(--pagination);
+  --color-pagination-border: var(--pagination-border);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-body: var(--body);
+  --color-subtle: var(--subtle);
+  --color-slate-text: var(--slate-text);
+  --color-caption: var(--caption);
+  --color-meta: var(--meta);
+  --color-hero-muted: var(--hero-muted);
+  --color-hero-shade: var(--hero-shade);
+  --color-search-overlay: var(--search-overlay);
+  --color-line-soft: var(--line-soft);
+  --color-line-card: var(--line-card);
+  --color-line-glass: var(--line-glass);
+  --color-school-icon: var(--school-icon);
+  --color-chip: var(--chip);
+  --color-chip-foreground: var(--chip-foreground);
+  --color-frost: var(--frost);
+
+  --shadow-float: 0 20px 12px rgb(0 0 0 / 0.06);
+  --shadow-article: 0 4px 30px rgb(0 0 0 / 0.1);
+  --shadow-glass: 2px 4px 10px rgb(0 0 0 / 0.25);
+  --shadow-cta: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-inset-glow: inset 0 2px 4px rgb(255 246 240 / 0.25);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -81,6 +126,38 @@
   --sidebar-ring: oklch(0.708 0 0);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+
+  --page: #f8fbff;
+  --brand: #1eaaff;
+  --brand-strong: #1ea0f7;
+  --brand-link: #50b2ed;
+  --brand-soft: rgb(200 234 255 / 0.4);
+  --brand-violet: #9462fb;
+  --brand-cyan: #6adbe3;
+  --title-from: #0683f3;
+  --title-to: #5fb4ff;
+  --deep-from: #3682ea;
+  --deep-to: #0148bf;
+  --azure-deep: #0072b7;
+  --pagination: #52a0ff;
+  --pagination-border: #d6d9dc;
+  --ink: #131313;
+  --ink-soft: #212121;
+  --body: #36383a;
+  --subtle: #7a7a7a;
+  --slate-text: #62748e;
+  --caption: #707070;
+  --meta: #434343;
+  --hero-muted: #d9d9d9;
+  --hero-shade: #191c1d;
+  --search-overlay: rgb(209 209 209 / 0.4);
+  --line-soft: #f1f5f9;
+  --line-card: #f3f4f6;
+  --line-glass: #bbbbbb;
+  --school-icon: #5496ff;
+  --chip: #f6f8ff;
+  --chip-foreground: #1e88e5;
+  --frost: #e2e8ff;
 }
 
 .dark {
@@ -127,4 +204,59 @@
   html {
     @apply font-sans;
   }
+}
+
+@utility text-gradient-title {
+  /* extra block padding keeps Vietnamese diacritics inside the clipped background */
+  padding-block: 0.12em;
+  margin-block: -0.12em;
+  background-image: linear-gradient(to bottom, var(--title-from), var(--title-to));
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-deep {
+  /* extra block padding keeps Vietnamese diacritics inside the clipped background */
+  padding-block: 0.12em;
+  margin-block: -0.12em;
+  background-image: linear-gradient(to bottom, var(--deep-from), var(--deep-to));
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-hero {
+  background-image: linear-gradient(
+    180deg,
+    #008aeb 4.9%,
+    #11a1ff 11.5%,
+    #3eafff 32.3%,
+    #6dc2fe 57.1%,
+    #78c7ff 78.3%,
+    #a2d9ff 93.6%,
+    #d7ebf9 104.2%
+  );
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  filter: drop-shadow(0 4px 4px rgb(0 0 0 / 0.1));
+}
+
+@utility text-gradient-hero-eyebrow {
+  background-image: linear-gradient(180deg, #ffffff 2.7%, #c0e4fb 122.5%);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-news-featured {
+  background-image:
+    linear-gradient(56.6deg, rgb(0 0 0 / 0.5) 15.2%, rgb(0 0 0 / 0.125) 84.4%),
+    linear-gradient(1.4deg, #0071c1 12.8%, rgb(82 156 208 / 0) 70.7%);
+}
+
+@utility bg-page-glow {
+  background-image: radial-gradient(
+    circle at 0 0,
+    rgb(30 170 255 / 0.08) 0%,
+    rgb(30 170 255 / 0) 60%
+  );
 }
